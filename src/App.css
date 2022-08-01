@@ -1,0 +1,17 @@
+:root {
+  --text-color: #5b5b5b;
+  --border-color: #e5e5e5;
+  --black-color: #000;
+  --white-color: #fff;
+  --green-primary-color: #2AC37D;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}

@@ -1,0 +1,24 @@
+.product-slider{
+  background-color: #f5f5f5;
+  .swiper-button-next, .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+    border: 2px solid #000;
+    background-color: #fff;
+    &::after {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 50px;
+    height: 2px;
+    border-radius: 1px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #000;
+    height: 4px;
+  }
+}
+  

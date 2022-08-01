@@ -1,0 +1,24 @@
+.slider-home {
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #000;
+        background-color: #fff;
+        top: 165px;
+        &::after {
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+        }
+    }
+    .swiper-pagination-bullet {
+        width: 50px;
+        height: 2px;
+        border-radius: 1px !important;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #000;
+        height: 4px;
+    }
+}

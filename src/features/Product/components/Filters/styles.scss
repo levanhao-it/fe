@@ -1,0 +1,11 @@
+.product-sort {
+  .MuiTabs-indicator {
+    left: 0;
+    background-color: #000 !important;
+  }
+  .MuiTab-wrapper {
+    justify-content: left !important;
+    flex-direction: row;
+    padding-left: 30px;
+  }
+}
