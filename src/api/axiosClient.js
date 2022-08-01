@@ -1,14 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
-import jwt_decode from "jwt-decode";
-import dayjs from "dayjs";
-import axiosPrivate from "./axiosPrivate";
-import StorageKeys from "constant/storage-keys";
+import jwt_decode from 'jwt-decode';
+import dayjs from 'dayjs';
+import axiosPrivate from './axiosPrivate';
+import StorageKeys from 'constant/storage-keys';
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:8080/api/",
+  baseURL: 'https://app-shoes-nlu.herokuapp.com/api/',
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
   withCredentials: true,
 });
@@ -19,18 +19,18 @@ axiosClient.interceptors.request.use(
   async function (config) {
     // Do something before request is sent
     if (
-      config.url.indexOf("login") >= 0 ||
-      config.url.indexOf("register") >= 0 ||
-      config.url.indexOf("verify") >= 0 ||
-      config.url.indexOf("token/refresh") >= 0 ||
-      config.url.indexOf("logout") >= 0 ||
-      config.url.indexOf("public/products") >= 0 ||
-      config.url.indexOf("public/rate") >= 0 ||
-      config.url.indexOf("public/categories") >= 0 ||
-      config.url.indexOf("forgot-password") >= 0 ||
-      config.url.indexOf("change-password") >= 0 ||
-      config.url.indexOf("public/sizes") >= 0 ||
-      config.url.indexOf("public/colors") >= 0
+      config.url.indexOf('login') >= 0 ||
+      config.url.indexOf('register') >= 0 ||
+      config.url.indexOf('verify') >= 0 ||
+      config.url.indexOf('token/refresh') >= 0 ||
+      config.url.indexOf('logout') >= 0 ||
+      config.url.indexOf('public/products') >= 0 ||
+      config.url.indexOf('public/rate') >= 0 ||
+      config.url.indexOf('public/categories') >= 0 ||
+      config.url.indexOf('forgot-password') >= 0 ||
+      config.url.indexOf('change-password') >= 0 ||
+      config.url.indexOf('public/sizes') >= 0 ||
+      config.url.indexOf('public/colors') >= 0
     ) {
       return config;
     }
@@ -46,7 +46,7 @@ axiosClient.interceptors.request.use(
     if (!isExprired) return config;
 
     try {
-      const response = await axiosPrivate.get("token/refresh");
+      const response = await axiosPrivate.get('token/refresh');
       if (response.status === 200) {
         const newToken = response.data.data.accessToken;
         localStorage.setItem(StorageKeys.TOKEN, newToken);

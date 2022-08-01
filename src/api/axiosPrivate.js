@@ -3,7 +3,7 @@ import StorageKeys from 'constant/storage-keys';
 
 import axiosClient from './axiosClient';
 
-const baseURL = 'http://localhost:8080/api/';
+const baseURL = 'https://app-shoes-nlu.herokuapp.com/api/';
 
 const axiosPrivate = axios.create({
   baseURL,
